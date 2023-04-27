@@ -1,0 +1,20 @@
+{
+  "name": "healtheebyte",
+  "version": "1.0.0",
+  "description": "An app where users can view, add, or search for different food recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momaki9/HealtheeByte.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/momaki9/HealtheeByte/issues"
+  },
+  "homepage": "https://github.com/momaki9/HealtheeByte#readme"
+}
