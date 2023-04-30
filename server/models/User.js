@@ -20,7 +20,8 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        favoriteRecipes: [recipeSchema]
+        myRecipes: [recipeSchema],
+        myfavoriteRecipes: [recipeSchema]
     },
     {
         toJSON: {
@@ -42,7 +43,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 userSchema.virtual('recipeCount').get(function() {
-    return this.favoriteRecipes.length;
+    return this.myfavoriteRecipes.length;
 });
 
 const User = model('User', userSchema);
