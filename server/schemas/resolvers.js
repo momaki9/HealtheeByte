@@ -4,9 +4,11 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        users: async (parent, args, context) => {
-            const allUsers = await User.find();
-            return allUsers;
+        users: async () => {
+            return User.find().populate('myRecipes');
+        },
+        user: async (parent, { userId }) => {
+            return User.findOne({ _id: userId });
         }
     },
     Mutation: {
