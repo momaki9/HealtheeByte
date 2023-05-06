@@ -8,8 +8,8 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Recipe from './pages/Recipe';
-
-import { Typography } from "@mui/material";
+import DevMode from './pages/DevMode';
+import RecipeOutline from './components/RecipeOutline';
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -42,6 +42,14 @@ function App() {
           <Route
             path='/addrecipe'
             element={<Recipe />}
+          />
+          <Route 
+          path='/dev'
+          element={<DevMode />}
+          />
+          <Route
+          path='/dev2'
+          element={<RecipeOutline />}
           />
         </Routes>
       </Router>

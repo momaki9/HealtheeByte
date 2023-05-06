@@ -22,12 +22,12 @@ export const SIGNUP_USER = gql`
     }
 `;
 
-export const ADD_RECIPE = gql`
+// export const ADD_RECIPE = gql`
 
-`;
+// `;
 
-export const ADD_INGREDIENT = gql`
+// export const ADD_INGREDIENT = gql`
 
-`;
+// `;
 
 
