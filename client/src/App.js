@@ -7,9 +7,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
-import Bar from "./components/Bar";
-import Signup from './components/Signup';
-import Login from "./components/Login";
+import Recipe from './pages/Recipe';
 
 import { Typography } from "@mui/material";
 
@@ -35,12 +33,19 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Bar />
-      <Typography variant="h2"> Healthee-Byte: Coming Soon!</Typography>
-      <Home />
-      <Login />
-      <Signup />
-      </ApolloProvider>
+      <Router>
+        <Routes>
+          <Route
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='/addrecipe'
+            element={<Recipe />}
+          />
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
 
