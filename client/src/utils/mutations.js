@@ -11,3 +11,13 @@ export const LOGIN_USER = gql`
         }
     }
 `;
+
+export const SIGNUP_USER = gql`
+    mutation createAcct($username: String!, $email: String!, $password: String!) {
+        createAcct(username: $username, email: $email, password: $password) {
+            user {
+                _id
+            }
+        }
+    }
+`;

@@ -8,6 +8,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Bar from "./components/Bar";
+import Signup from './components/Signup';
 import Login from "./components/Login";
 
 import { Typography } from "@mui/material";
@@ -38,6 +39,7 @@ function App() {
       <Typography variant="h2"> Healthee-Byte: Coming Soon!</Typography>
       <Home />
       <Login />
+      <Signup />
       </ApolloProvider>
   );
 }

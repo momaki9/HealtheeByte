@@ -59,12 +59,12 @@ const Login = () => {
                     onChange={handleChage}
                     name='password'
                     value={formState.password}
-                    helperText="Please enter ypur password"
+                    helperText="Please enter your password"
                     label="Password"
                     type='password'
                 />
             </Box>
-            <Button variant='outlined' size='large' type='submit' onClick={handleFormSubmission}>Submit</Button>
+            <Button variant='outlined' size='large' type='submit' onClick={handleFormSubmission}>Login</Button>
         </FormControl>
     )
 };

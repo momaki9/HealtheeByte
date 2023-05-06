@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import {
     AppBar,
     Box,
@@ -21,8 +21,8 @@ const pages = ['Recipes', 'Merch', 'Blog'];
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Bar() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElUser, setAnchorElUser] = useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
