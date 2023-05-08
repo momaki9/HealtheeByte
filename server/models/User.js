@@ -20,8 +20,12 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        myRecipes: [recipeSchema],
-        myfavoriteRecipes: [recipeSchema]
+        myRecipes: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Recipe'
+            }
+        ]
     },
     {
         toJSON: {
@@ -42,9 +46,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('recipeCount').get(function() {
-    return this.myfavoriteRecipes.length;
-});
+// userSchema.virtual('recipeCount').get(function() {
+//     return this.myfavoriteRecipes.length;
+// });
 
 const User = model('User', userSchema);
 

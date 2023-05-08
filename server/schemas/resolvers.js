@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Recipe } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -29,11 +29,18 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addRecipe: async (parent, { recipeData }, context) => {
+        addRecipe: async (parent, { title, image, rating, ingredients, recipeSteps, video }, context) => {
             if (context.user) {
                 const updateUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { myRecipes: recipeData } },
+                    { $push: {
+                         title: title,
+                         image: image,
+                         rating: rating,
+                         ingredients: ingredients,
+                         recipeSteps: recipeSteps,
+                         video: video 
+                        } },
                     { new: true }
                 );
                 return updateUser;

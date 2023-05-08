@@ -22,9 +22,15 @@ export const SIGNUP_USER = gql`
     }
 `;
 
-// export const ADD_RECIPE = gql`
-
-// `;
+export const ADD_RECIPE = gql`
+    mutation addRecipe($title: String!, $image: String, $rating: String, $ingredients: [String]!, $recipeSteps: [String]!, $video: String){
+        addRecipe(title: $title, image: $image, rating: $rating, ingredients: $ingredients, recipeSteps: $recipeSteps, video: $video) {
+            user {
+                _id
+            }
+        }
+    }
+`;
 
 // export const ADD_INGREDIENT = gql`
 

@@ -1,5 +1,6 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+
 const recipeSchema = new Schema(
     {
         title: {
@@ -54,4 +55,6 @@ const recipeSchema = new Schema(
     }
 );
 
-module.exports = recipeSchema;
+const Recipe = model('Recipe', recipeSchema)
+
+module.exports = Recipe;

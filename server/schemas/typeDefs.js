@@ -7,7 +7,6 @@ const typeDefs = gql`
         email: String
         recipeCount: Int
         myRecipes: [Recipe]
-        myFavoriteRecipes: [Recipe]
     }
     type Recipe {
         _id: ID!
@@ -26,14 +25,6 @@ const typeDefs = gql`
         commentAuthor: String
         createdAt: String
     }
-    input RecipeData {
-        title: String!
-        image: String
-        rating: String
-        ingredients: [String]
-        recipeSteps: [String]
-        video: String
-    }
     type Auth {
         token: ID!
         user: User
@@ -45,7 +36,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         createAcct(username: String!, email: String!, password: String!): Auth
-        addRecipe(recipeData: RecipeData!): User
+        addRecipe(title: String!, image: String, rating: String, ingredients: [String]!, recipeSteps: [String]!, video: String): User
         saveRecipe(recipeId: ID!): User
     }
 `;
