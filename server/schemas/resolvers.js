@@ -2,6 +2,8 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User, Recipe } = require('../models');
 const { signToken } = require('../utils/auth');
 
+const myUserId = "6451a917ae911a82faad7423";
+
 const resolvers = {
     Query: {
         users: async () => {
@@ -29,22 +31,17 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addRecipe: async (parent, { title, image, rating, ingredients, recipeSteps, video }, context) => {
-            if (context.user) {
-                const updateUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: {
-                         title: title,
-                         image: image,
-                         rating: rating,
-                         ingredients: ingredients,
-                         recipeSteps: recipeSteps,
-                         video: video 
-                        } },
+        addRecipe: async (parent, { userId, title, image, rating, ingredients, recipeSteps, video }) => {
+            if (myUserId) {
+                const recipe = await Recipe.create({ title, image, rating, ingredients, recipeSteps, video, userId: myUserId });
+                await User.findOneAndUpdate(
+                    { _id: myUserId },
+                    { $addToSet: { myRecipes: recipe._id } },
                     { new: true }
                 );
-                return updateUser;
-            };
+                return recipe;
+            }
+            throw new AuthenticationError('Log in first')
         },
         saveRecipe: async (parent, { recipeId }, context) => {
             if (context.user) {
