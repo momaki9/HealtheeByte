@@ -10,6 +10,7 @@ const typeDefs = gql`
     }
     type Recipe {
         _id: ID!
+        userId: User
         title: String!
         image: String
         rating: String
@@ -31,7 +32,9 @@ const typeDefs = gql`
     }
     type Query {
         users: [User]
+        allRecipes: [Recipe]
         user(userId: ID!): User
+        oneRecipe(recipeId: ID!): Recipe
     }
     type Mutation {
         login(email: String!, password: String!): Auth
