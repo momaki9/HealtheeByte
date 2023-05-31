@@ -1,4 +1,11 @@
+import { useQuery } from "@apollo/client";
+import { QUERY_RECIPES } from "../utils/queries";
+
 const DevMode = () => {
+
+    const { loading, data } = useQuery(QUERY_RECIPES);
+    const allRecipes = data?.allRecipes || [];
+    console.log(allRecipes);
     return (
         <>
         <h2>To Do's</h2>
