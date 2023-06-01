@@ -40,6 +40,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         createAcct(username: String!, email: String!, password: String!): Auth
         addRecipe(title: String!, image: String, rating: String, ingredients: [String]!, recipeSteps: [String]!, video: String): Recipe
+        deleteRecipe(recipeId: ID!): Recipe
         saveRecipe(recipeId: ID!): User
     }
 `;

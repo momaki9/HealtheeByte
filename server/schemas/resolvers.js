@@ -48,6 +48,9 @@ const resolvers = {
             }
             throw new AuthenticationError('Log in first')
         },
+        deleteRecipe: async (parent, {recipeId}) => {
+            return Recipe.findOneAndDelete({ _id: recipeId})
+        },
         saveRecipe: async (parent, { recipeId }, context) => {
             if (context.user) {
                 const updateUser = await User.findByIdAndUpdate(
