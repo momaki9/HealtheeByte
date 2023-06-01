@@ -13,3 +13,14 @@ export const QUERY_RECIPES = gql`
     }
 `;
 
+export const QUERY_PROFILE = gql`
+    query user($userId: ID!){
+        user(userId: $userId){
+            username
+            email
+            myRecipes{
+                _id
+            }
+        }
+    }
+`;

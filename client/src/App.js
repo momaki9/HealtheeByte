@@ -7,6 +7,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
+import Profile from './pages/Profile';
 import Recipe from './pages/Recipe';
 import DevMode from './pages/DevMode';
 import RecipeOutline from './components/RecipeOutline';
@@ -38,6 +39,10 @@ function App() {
           <Route
             path='/'
             element={<Home />}
+          />
+          <Route
+            path='/profile'
+            element={<Profile />}
           />
           <Route
             path='/addrecipe'
