@@ -34,8 +34,8 @@ const modules = {
 };
 
 // const ingredientArray = ["Saab", "Volvo", "BMW","Saab", "Volvo", "BMW","Saab", "Volvo", "BMW"];
-let ingredientArray = [];
-let procedureSteps = [];
+// let ingredientArray = [];
+// let procedureSteps = [];
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -48,10 +48,10 @@ const Item = styled(Paper)(({ theme }) => ({
 const Recipe = () => {
     const [title, setTitle] = useState('');
     const [imgLink, setImgLink] = useState('');
-    const [ingredient, setIngredient] = useState('');
-    const [procedure, setProcedure] = useState('');
+    // const [ingredient, setIngredient] = useState('');
+    // const [procedure, setProcedure] = useState('');
     const [vidLink, setVidLink] = useState('');
-    const [value, setValue ] = useState('');
+    const [description, setDescription ] = useState('');
     // const [formState, setFormState] = useState(
     //     {
     //         title: '',
@@ -64,18 +64,19 @@ const Recipe = () => {
     // );
 
     const [addRecipe, { error }] = useMutation(ADD_RECIPE);
-    const addIngredient = () => {
-        console.log(ingredient);
-        ingredientArray.push(ingredient);
-        setIngredient('');
-        console.log(ingredientArray);
-    }
-    const addProcedureSteps = () => {
-        console.log(procedure);
-        procedureSteps.push(procedure);
-        setProcedure('');
-        console.log(procedureSteps);
-    }
+
+    // const addIngredient = () => {
+    //     console.log(ingredient);
+    //     ingredientArray.push(ingredient);
+    //     setIngredient('');
+    //     console.log(ingredientArray);
+    // }
+    // const addProcedureSteps = () => {
+    //     console.log(procedure);
+    //     procedureSteps.push(procedure);
+    //     setProcedure('');
+    //     console.log(procedureSteps);
+    // }
 
     const handleFormSubmission = async (event) => {
         event.preventDefault();
@@ -85,14 +86,15 @@ const Recipe = () => {
                     title: title,
                     image: imgLink,
                     rating: '',
-                    ingredients: ingredientArray,
-                    recipeSteps: procedureSteps,
+                    description: description,
                     video: vidLink
                 }
             });
             console.log(data);
             setTitle('');
             setImgLink('');
+            setDescription('');
+            setVidLink('');
         } catch (err) {
             console.error(err)
         }
@@ -122,15 +124,15 @@ const Recipe = () => {
             <Stack direction={'row'} spacing={2} paddingTop={"2%"} marginBottom={"2%"} paddingBottom={"2%"}>
                 <Typography variant='h5'>Ingredients & Procedure</Typography>
                 <ReactQuill
-                    value={value}
+                    value={description}
                     name='ingredientsAndProcedure'
-                    onChange={setValue}
+                    onChange={setDescription}
                     theme='snow'
                     modules={modules}
                     formats={formats}
                 />
             </Stack>
-            <Stack direction={'row'} spacing={2}>
+            {/* <Stack direction={'row'} spacing={2}>
                 <Typography variant='h5'>Ingredients</Typography>
                 <TextField
                     value={ingredient}
@@ -139,7 +141,7 @@ const Recipe = () => {
                 >
                 </TextField>
                 <Button onClick={addIngredient}>Add</Button>
-            </Stack>
+            </Stack> */}
             {/* <Box>
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
@@ -150,15 +152,15 @@ const Recipe = () => {
                     </Grid>
                 </Grid>
             </Box> */}
-            <Stack spacing={2} direction={'row'}>
+            {/* <Stack spacing={2} direction={'row'}>
                 <List>
                     {ingredientArray &&
                         ingredientArray.map((ingredientItem) => (
                             <ListItem key={ingredientItem}>{ingredientItem}</ListItem>
                         ))}
                 </List>
-            </Stack>
-            <Stack direction={'row'} spacing={2}>
+            </Stack> */}
+            {/* <Stack direction={'row'} spacing={2}>
                 <Typography variant='h5'>Procedure</Typography>
                 <TextField
                     value={procedure}
@@ -174,7 +176,7 @@ const Recipe = () => {
                             <ListItem key={procedureStep}>{procedureStep}</ListItem>
                         ))}
                 </List>
-            </Stack>
+            </Stack> */}
             <Stack direction={'row'} spacing={2}>
                 <Typography variant='h5'>Video Link</Typography>
                 <TextField
