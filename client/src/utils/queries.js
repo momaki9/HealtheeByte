@@ -4,8 +4,8 @@ export const QUERY_RECIPES = gql`
     query allRecipes{
         allRecipes{
             title
-            recipeSteps
-            ingredients
+            description
+            _id
             userId {
                 _id
             }

@@ -17,7 +17,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 
-const pages = ['Recipes', 'Merch', 'Blog'];
+const pages = ['recipes', 'merch', 'blog'];
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
 function Bar() {
@@ -102,6 +102,7 @@ function Bar() {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
+                                href={'/'+ page}    
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import Profile from './pages/Profile';
 import Recipe from './pages/Recipe';
+import Browse from './pages/Browse';
 import DevMode from './pages/DevMode';
 import RecipeOutline from './components/RecipeOutline';
 
@@ -40,6 +41,10 @@ function App() {
             path='/'
             element={<Home />}
           />
+          <Route
+            path='/recipes'   
+            element={<Browse />}
+          />          
           <Route
             path='/profile'
             element={<Profile />}
