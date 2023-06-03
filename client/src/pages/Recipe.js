@@ -2,6 +2,8 @@ import Bar from '../components/Bar';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_RECIPE } from '../utils/mutations';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import {
     Typography,
     TextField,
@@ -14,6 +16,22 @@ import {
     Paper,
     Grid
 } from '@mui/material';
+
+const formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image'
+];
+
+const modules = {
+    toolbar: [
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+        ['link']
+    ]
+};
 
 // const ingredientArray = ["Saab", "Volvo", "BMW","Saab", "Volvo", "BMW","Saab", "Volvo", "BMW"];
 let ingredientArray = [];
@@ -33,6 +51,7 @@ const Recipe = () => {
     const [ingredient, setIngredient] = useState('');
     const [procedure, setProcedure] = useState('');
     const [vidLink, setVidLink] = useState('');
+    const [value, setValue ] = useState('');
     // const [formState, setFormState] = useState(
     //     {
     //         title: '',
@@ -99,6 +118,17 @@ const Recipe = () => {
                     name='imgLink'
                     onChange={(e) => setImgLink(e.target.value)}
                 ></TextField>
+            </Stack>
+            <Stack direction={'row'} spacing={2} paddingTop={"2%"} marginBottom={"2%"} paddingBottom={"2%"}>
+                <Typography variant='h5'>Ingredients & Procedure</Typography>
+                <ReactQuill
+                    value={value}
+                    name='ingredientsAndProcedure'
+                    onChange={setValue}
+                    theme='snow'
+                    modules={modules}
+                    formats={formats}
+                />
             </Stack>
             <Stack direction={'row'} spacing={2}>
                 <Typography variant='h5'>Ingredients</Typography>

@@ -15,8 +15,7 @@ const typeDefs = gql`
         image: String
         rating: String
         createdAt: String
-        ingredients: [String]!
-        recipeSteps: [String]!
+        description: String!
         video: String
         comments: [Comment]!
     }
@@ -39,7 +38,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         createAcct(username: String!, email: String!, password: String!): Auth
-        addRecipe(title: String!, image: String, rating: String, ingredients: [String]!, recipeSteps: [String]!, video: String): Recipe
+        addRecipe(title: String!, image: String, rating: String, description: String!, video: String): Recipe
         deleteRecipe(recipeId: ID!): Recipe
         saveRecipe(recipeId: ID!): User
     }

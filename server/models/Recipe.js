@@ -22,18 +22,10 @@ const recipeSchema = new Schema(
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
         },
-        ingredients: [
-            {
-                type: String,
-                required: true
-            }
-        ],
-        recipeSteps: [
-            {
-                type: String,
-                required: true
-            }
-        ],
+        description: {
+            type: String,
+            required: true
+        },
         video: {
             type: String
         },
