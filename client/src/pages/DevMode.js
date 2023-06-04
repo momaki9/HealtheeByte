@@ -12,7 +12,9 @@ const DevMode = () => {
                 <li style={{ margin: '1%', fontSize: '23px' }}>Figure out how to include images</li>
                 <li style={{ margin: '1%', fontSize: '23px' }}>Work on creating a Recipe Outline page</li>
                 <li style={{ margin: '1%', fontSize: '23px' }}>Figure out how to embed youtube videos</li>
-                <li style={{ margin: '1%', fontSize: '23px' }}>Future Dev: Allow users to include images into their recipes as well as resize/position them as needed</li>
+            <h3>Future Development:</h3>
+                <li style={{ margin: '1%', fontSize: '23px' }}>Allow users to include images into their recipes as well as resize/position them as needed</li>
+                <li style={{ margin: '1%', fontSize: '23px' }}>Implement recipe rating system and visit count (so that top rated and most viewed/trending can be set as categories?)</li>
             </ol>
         </>
     )

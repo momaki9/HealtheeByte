@@ -10,7 +10,8 @@ import {
     Avatar,
     Button,
     Tooltip,
-    MenuItem
+    MenuItem,
+    Link
 
 } from '@mui/material';
 
@@ -91,8 +92,8 @@ function Bar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page} onClick={handleCloseNavMenu} >
+                                    <Typography textAlign="center"><Link href={'/'+ page} underline='none' color={'inherit'}>{page.toUpperCase()}</Link></Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -133,7 +134,7 @@ function Bar() {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center"><Link href={'/'+ setting} underline='none' color={'inherit'}>{setting}</Link></Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

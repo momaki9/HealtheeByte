@@ -9,7 +9,7 @@ import {
 const Browse = () => {
     const { loading, data } = useQuery(QUERY_RECIPES);
     const allRecipes = data?.allRecipes || [];
-    // console.log(allRecipes);
+    console.log(allRecipes);
     return (
         <>
         <Bar />

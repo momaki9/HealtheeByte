@@ -46,7 +46,7 @@ function App() {
             element={<Browse />}
           />          
           <Route
-            path='/profile'
+            path='/Profile'
             element={<Profile />}
           />
           <Route
