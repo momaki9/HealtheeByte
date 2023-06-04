@@ -11,6 +11,7 @@ import Profile from './pages/Profile';
 import Recipe from './pages/Recipe';
 import Browse from './pages/Browse';
 import DevMode from './pages/DevMode';
+import SingleRecipe from './components/SingleRecipe';
 import RecipeOutline from './components/RecipeOutline';
 
 const httpLink = createHttpLink({
@@ -44,6 +45,10 @@ function App() {
           <Route
             path='/recipes'   
             element={<Browse />}
+          /> 
+          <Route
+            path='/recipes/:recipeId'   
+            element={<SingleRecipe />}
           />          
           <Route
             path='/Profile'

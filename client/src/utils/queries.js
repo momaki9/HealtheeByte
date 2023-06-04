@@ -37,3 +37,16 @@ export const QUERY_PROFILE = gql`
         }
     }
 `;
+
+export const QUERY_ONE_RECIPE = gql`
+    query oneRecipe($recipeId: ID!) {
+        oneRecipe(recipeId: $recipeId) {
+            title
+            description
+            createdAt
+            userId {
+                _id
+            }  
+        }
+    }
+`;
