@@ -10,7 +10,6 @@ const typeDefs = gql`
     }
     type Recipe {
         _id: ID!
-        userId: User
         title: String!
         image: String
         rating: String
@@ -41,6 +40,7 @@ const typeDefs = gql`
         addRecipe(title: String!, image: String, rating: String, description: String!, video: String): Recipe
         deleteRecipe(recipeId: ID!): Recipe
         saveRecipe(recipeId: ID!): User
+        updateRecipe(recipeId: ID!, title: String, description: String, image: String, video: String): Recipe
     }
 `;
 

@@ -16,11 +16,6 @@ export const QUERY_RECIPES = gql`
                 commentText
                 createdAt
             }
-            userId {
-                _id
-                email
-                
-            }
         }
     }   
 `;
@@ -44,9 +39,6 @@ export const QUERY_ONE_RECIPE = gql`
             title
             description
             createdAt
-            userId {
-                _id
-            }  
         }
     }
 `;
