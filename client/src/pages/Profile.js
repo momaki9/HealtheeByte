@@ -3,7 +3,8 @@ import { QUERY_PROFILE } from "../utils/queries";
 import Bar from "../components/Bar";
 import Auth from '../utils/auth';
 import {
-    Link
+    Link,
+    Typography
 } from '@mui/material';
 
 const Profile = () => {
@@ -16,9 +17,8 @@ const Profile = () => {
     return (
         <>
         <Bar />
-        <h1>Profile Page</h1>
-        <h2>Welcome {profile.username}</h2>
-        <Link href="/addrecipe">Add A Recipe</Link>
+        <Typography variant="h3" sx={{p:1}}>Welcome {profile.username}</Typography>
+        <Link href="/addrecipe" sx={{p: 2, fontSize: 24}}>Add A Recipe</Link>
         </>
     )
 };

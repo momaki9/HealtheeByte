@@ -30,12 +30,12 @@ const steps = [
     quote: "Search for your HealtheeByte recipe",
     image: "https://i.postimg.cc/NfqxGwBh/clark-douglas-H4-Tg-NQ7-QGFM-unsplash.jpg",
     altText: "placeholder alt text 2",
-    link: "#"
+    link: "recipes"
   },
   {
     label: 'Create a Recipe',
     description: `Maybe you would like to share your recipe with the word? Simply create your own!`,
-    quote: "Login or Create an account to add own recipe",
+    quote: "Login/Create an account to add your own recipes!",
     image: "https://i.postimg.cc/X7DwsB1K/max-saeling-Ax-XT3k-Fd-Gg-unsplash.jpg",
     altText: "placeholder alt text 3",
     link: "login"

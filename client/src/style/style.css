@@ -24,3 +24,7 @@
 .login-div {
     margin-left: 38%;
 }
+
+.add-recipe, .add-recipe-stack {
+    padding: 1%;
+}

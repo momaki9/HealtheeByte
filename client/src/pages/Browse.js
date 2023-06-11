@@ -10,13 +10,17 @@ import {
 const Browse = () => {
     const { loading, data } = useQuery(QUERY_RECIPES);
     const allRecipes = data?.allRecipes || [];
-    console.log(allRecipes);
+    if (loading) {
+        return (
+            <Typography variant="h4">Recipes loading...</Typography>
+        )
+    }
     return (
         <>
         <Bar />
-        <h1>Page to show all recipes</h1>
+        <Typography variant="h3" sx={{p: 1}}>All Recipes</Typography>
         {allRecipes.map((recipe) => (
-            <Stack key={recipe._id}>
+            <Stack key={recipe._id} sx={{p: 1}}>
                 <Typography><Link href={`/recipes/${recipe._id}`}>{recipe.title}</Link></Typography>
             </Stack>
         ))}
