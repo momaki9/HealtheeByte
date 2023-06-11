@@ -59,6 +59,9 @@ const Recipe = () => {
         }
 
     }
+    if (error) {
+        console.log(error)
+    };
 
     return (
         <>
@@ -102,6 +105,7 @@ const Recipe = () => {
                         value={vidLink}
                         name='vidLink'
                         onChange={(e) => setVidLink(e.target.value)}
+                        placeholder='Insert Youtube link here!'
                         sx={{width: 604}}
                     ></TextField>
                 </Stack>
