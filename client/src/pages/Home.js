@@ -35,10 +35,10 @@ const steps = [
   {
     label: 'Create a Recipe',
     description: `Maybe you would like to share your recipe with the word? Simply create your own!`,
-    quote: "Create your own recipe",
+    quote: "Login or Create an account to add own recipe",
     image: "https://i.postimg.cc/X7DwsB1K/max-saeling-Ax-XT3k-Fd-Gg-unsplash.jpg",
     altText: "placeholder alt text 3",
-    link: "addrecipe"
+    link: "login"
   },
 ];
 
@@ -57,7 +57,7 @@ const Home = () => {
   return (
     <div className='home-page'>
       <Bar />
-      <Typography variant="h3" className='page-header'>View, Search, Add recipes and More!</Typography>
+      <Typography variant="h2" className='page-header'>View, Search, Add recipes and More!</Typography>
       <Grid container spacing={2} id='card-container' xs={8}>
         <Grid item xs={6}>
           <Card sx={{ minWidth: 275 }}>

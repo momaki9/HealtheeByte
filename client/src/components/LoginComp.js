@@ -41,7 +41,7 @@ const Login = () => {
     }
 
     return (
-        <FormControl>
+        <FormControl sx={{p: 2, margin: 1}}>
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',

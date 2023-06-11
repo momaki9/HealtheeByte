@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { SIGNUP_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
+import "../style/style.css"
 
 const style = {
     position: 'absolute',
@@ -65,8 +66,8 @@ const Signup = () => {
     };
 
     return (
-        <>
-            <Typography>Don't have an account?<Button onClick={handleOpen} variant='caption'>Sign up!</Button></Typography>
+        <div>
+            <Typography variant='h5' sx={{marginLeft: 10}}>Don't have an account?<Button onClick={handleOpen} color='primary' variant='contained' sx={{p: 1.5, margin: 2}}>Sign up!</Button></Typography>
             <Modal
                 open={open}
                 onClose={hanldeClose}
@@ -104,7 +105,7 @@ const Signup = () => {
 
                 </Box>
             </Modal>
-        </>
+        </div>
     )
 }
 
