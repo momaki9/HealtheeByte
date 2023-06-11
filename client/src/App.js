@@ -7,6 +7,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
+import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Recipe from './pages/Recipe';
 import Browse from './pages/Browse';
@@ -43,13 +44,17 @@ function App() {
             element={<Home />}
           />
           <Route
-            path='/recipes'   
-            element={<Browse />}
-          /> 
+            path='/login'
+            element={<Login />}
+          />
           <Route
-            path='/recipes/:recipeId'   
+            path='/recipes'
+            element={<Browse />}
+          />
+          <Route
+            path='/recipes/:recipeId'
             element={<SingleRecipe />}
-          />          
+          />
           <Route
             path='/Profile'
             element={<Profile />}
@@ -58,13 +63,13 @@ function App() {
             path='/addrecipe'
             element={<Recipe />}
           />
-          <Route 
-          path='/dev'
-          element={<DevMode />}
+          <Route
+            path='/dev'
+            element={<DevMode />}
           />
           <Route
-          path='/dev2'
-          element={<RecipeOutline />}
+            path='/dev2'
+            element={<RecipeOutline />}
           />
         </Routes>
       </Router>
